@@ -13,7 +13,7 @@ export default function Loading() {
 
     return (
         <div style={styles.container}>
-            <h3>Loading...</h3>
+            <h1>Loading...</h1>
         </div>
     );
 }
