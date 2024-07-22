@@ -42,7 +42,7 @@ export default function Page({ params }) {
                   {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-instagram"></FontAwesomeIcon></AnimatedLink> }
                   {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
                   {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-clipboard" /></AnimatedLink>}
-                  <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon="fa-solid fa-bolt" /></AnimatedLink>
+                  <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-bolt" /></AnimatedLink>
                 </div>
               </div>
             </main>
