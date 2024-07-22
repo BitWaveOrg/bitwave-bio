@@ -16,12 +16,16 @@ const AnimatedLink = ({ href, children, ...props }) => {
         }, 1000);
     };
 
+    function getRandomValue() {
+        return Math.floor(Math.random() * 7) + 1;
+    }
+
     return (
         <>
             <Link href={href} onClick={handleClick} {...props}>
                 {children}
             </Link>
-            <PageTransition isAnimating={isAnimating} gifSrc={'/assets/img/loading.gif'} />
+            <PageTransition isAnimating={isAnimating} gifSrc={`/assets/img/loadings/loading${getRandomValue()}.gif`} />
         </>
     );
 };
