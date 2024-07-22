@@ -1,4 +1,5 @@
 import "./globals.css";
+import "/public/assets/css/style.css";
 
 export const metadata = {
   title: "BitWave Bio Landing",
