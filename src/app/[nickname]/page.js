@@ -4,11 +4,12 @@ import AnimatedLink from "@/components/AnimatedLink";
 import { Poppins } from "next/font/google"
 import { JetBrains_Mono } from "next/font/google";
 import { use } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faLink, faClipboard} from '@fortawesome/fontawesome-free-solid'
+import {faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam} from '@fortawesome/free-brands-svg-icons'
 
-const poppinsRegular = Poppins({
-    weight: '400',
-    subsets: ['latin'],
-});
+const { library } = require('@fortawesome/fontawesome-svg-core');
+library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard);
 
 const poppinsBold = Poppins({
     weight: '700',
@@ -33,14 +34,14 @@ export default function Page({ params }) {
                                 <p className={`${jetbrainsmono.className} dark:text-white text-black`} id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
                             </div>
                             <div className="links-wrapper">
-                                <AnimatedLink className="links-btn" href={`https://github.com/${params.nickname}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></AnimatedLink>
-                                {user.linkedin_login && <AnimatedLink className="links-btn" href={`https://www.linkedin.com/in/${user.linkedin_login}/`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></AnimatedLink>}
-                                {user.telegram_login && <AnimatedLink className="links-btn" href={`https://t.me/${user.telegram_login}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-telegram"></i></AnimatedLink>}
-                                {user.discords_login && <AnimatedLink className="links-btn" href={`https://discords.com/bio/p/${user.discords_login}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-discord"></i></AnimatedLink>}
-                                {user.steam_login && <AnimatedLink className="links-btn" href={`https://steamcommunity.com/id/${user.steam_login}/`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-steam"></i></AnimatedLink> }
-                                {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></AnimatedLink> }
-                                {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-link"></i></AnimatedLink> }
-                                {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-file-contract"></i></AnimatedLink>}
+                                <AnimatedLink className="links-btn" href={`https://github.com/${params.nickname}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-github" /></AnimatedLink>
+                                {user.linkedin_login && <AnimatedLink className="links-btn" href={`https://www.linkedin.com/in/${user.linkedin_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-linkedin"></FontAwesomeIcon></AnimatedLink>}
+                                {user.telegram_login && <AnimatedLink className="links-btn" href={`https://t.me/${user.telegram_login}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-telegram"></FontAwesomeIcon></AnimatedLink>}
+                                {user.discords_login && <AnimatedLink className="links-btn" href={`https://discords.com/bio/p/${user.discords_login}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-discord"></FontAwesomeIcon></AnimatedLink>}
+                                {user.steam_login && <AnimatedLink className="links-btn" href={`https://steamcommunity.com/id/${user.steam_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-steam"></FontAwesomeIcon></AnimatedLink> }
+                                {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-instagram"></FontAwesomeIcon></AnimatedLink> }
+                                {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
+                                {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-clipboard" /></AnimatedLink>}
                             </div>
                         </div>
                     </main>
