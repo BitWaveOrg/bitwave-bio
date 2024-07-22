@@ -5,11 +5,11 @@ import { Poppins } from "next/font/google"
 import { JetBrains_Mono } from "next/font/google";
 import { use } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faLink, faClipboard} from '@fortawesome/fontawesome-free-solid'
+import {faLink, faClipboard, faBolt} from '@fortawesome/fontawesome-free-solid'
 import {faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam} from '@fortawesome/free-brands-svg-icons'
 
 const { library } = require('@fortawesome/fontawesome-svg-core');
-library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard);
+library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard, faBolt);
 
 const poppinsBold = Poppins({
     weight: '700',
@@ -42,6 +42,7 @@ export default function Page({ params }) {
                                 {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-instagram"></FontAwesomeIcon></AnimatedLink> }
                                 {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
                                 {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-clipboard" /></AnimatedLink>}
+                                <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon="fa-solid fa-bolt" /></AnimatedLink>
                             </div>
                         </div>
                     </main>
