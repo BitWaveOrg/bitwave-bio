@@ -30,7 +30,7 @@ export default function Page({ params, user }) {
                         <Image className={'rounded-full mb-12'} src={avatar} alt={'avatar'} width={100} height={100}></Image>
                         <h1 className={poppinsBold.className}>{user.user_firstname}</h1>
                         <div id="textWriterWrapper">
-                            <p className={jetbrainsmono.className} id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
+                            <p className={`${jetbrainsmono.className} dark:text-white text-black`} id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
                         </div>
                         <div className="links-wrapper">
                             <AnimatedLink className="links-btn" href={`https://github.com/${params.nickname}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></AnimatedLink>
