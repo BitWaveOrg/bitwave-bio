@@ -6,7 +6,9 @@ export function getGitHubAvatarUrl(username) {
 
 export async function getGitHubConfig(username) {
     const url = `https://raw.githubusercontent.com/${username}/${username}/main/config.yml`;
-    const config = await fetch(url).then((res) => res.text());
+    const config = await fetch(url, {
+        next: { revalidate: 5 },
+    }).then((res) => res.text());
     if (config.startsWith('404')) return null;
     try {
         return YAML.parse(config);
