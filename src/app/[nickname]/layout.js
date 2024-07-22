@@ -1,10 +1,7 @@
-import { Inter } from "next/font/google";
 import Page from "../[nickname]/page";
 import "../globals.css";
 import "/public/assets/css/style.css";
 import {getGitHubConfig} from "@/lib/github";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "User Profile",
@@ -14,10 +11,10 @@ export const metadata = {
 export default async function RootLayout({ params }) {
     const user = await getGitHubConfig(params.nickname);
     return (
-        <html lang="en">
-        <body className={inter.className}>
-            <Page params={params} user={user} />
-        </body>
-        </html>
+      <html lang="en">
+      <body>
+          <Page params={params} user={user} />
+      </body>
+      </html>
     );
 }
