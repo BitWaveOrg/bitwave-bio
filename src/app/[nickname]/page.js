@@ -1,4 +1,5 @@
 import {getGitHubAvatarUrl} from "@/lib/github";
+import Image from "next/image";
 export default function Page({ params, user }) {
     const avatar = getGitHubAvatarUrl(params.nickname);
     return (
@@ -9,6 +10,7 @@ export default function Page({ params, user }) {
                         <div id="bg-ellipse" className="fade-in"><div id="bg-ellipse2" className="fadeIn">
                             <main id="mainContainer" className="animate-bottom">
                                 <div className="hero">
+                                    <Image className={'rounded-full mb-12'} src={avatar} alt={'avatar'} width={100} height={100}></Image>
                                     <h1 className="ft-bold">{user.user_firstname}</h1>
                                     <div id="textWriterWrapper">
                                         <p className="ft-code" id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
