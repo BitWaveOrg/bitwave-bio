@@ -3,6 +3,7 @@ import Image from "next/image";
 import AnimatedLink from "@/components/AnimatedLink";
 import { poppinsBold, jetbrainsMono } from "@/lib/fonts";
 import {getGitHubAvatarUrl, getGitHubConfig} from "@/lib/github";
+import {checkAlias} from "@/lib/alias";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink, faClipboard, faBolt } from '@fortawesome/fontawesome-free-solid'
 import { faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam } from '@fortawesome/free-brands-svg-icons'
@@ -11,8 +12,9 @@ const { library } = require('@fortawesome/fontawesome-svg-core');
 library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard, faBolt);
 
 export default function Page({ params }) {
-  const user = use(getGitHubConfig(params.nickname));
-  const avatar = getGitHubAvatarUrl(params.nickname);
+  const username = checkAlias(params.nickname);
+  const user = use(getGitHubConfig(username));
+  const avatar = getGitHubAvatarUrl(username);
   return (
     <>
       {user ? (
@@ -25,7 +27,7 @@ export default function Page({ params }) {
                   <p className={`${jetbrainsMono.className} dark:text-white text-black`} id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
                 </div>
                 <div className="links-wrapper">
-                  <AnimatedLink className="links-btn" href={`https://github.com/${params.nickname}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-github" /></AnimatedLink>
+                  <AnimatedLink className="links-btn" href={`https://github.com/${username}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-github" /></AnimatedLink>
                   {user.linkedin_login && <AnimatedLink className="links-btn" href={`https://www.linkedin.com/in/${user.linkedin_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-linkedin"></FontAwesomeIcon></AnimatedLink>}
                   {user.telegram_login && <AnimatedLink className="links-btn" href={`https://t.me/${user.telegram_login}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-telegram"></FontAwesomeIcon></AnimatedLink>}
                   {user.discords_login && <AnimatedLink className="links-btn" href={`https://discords.com/bio/p/${user.discords_login}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-discord"></FontAwesomeIcon></AnimatedLink>}
