@@ -16,8 +16,7 @@ export default function Page({ params }) {
   return (
     <>
       {user ? (
-        <div id="bg-ellipse" className="fade-in">
-          <div id="bg-ellipse2" className="fadeIn">
+
             <main id="mainContainer" className="animate-bottom">
               <div className="hero">
                 <Image className={'rounded-full mb-12 shadow-lg'} src={avatar} alt={'avatar'} width={100} height={100}></Image>
@@ -38,8 +37,7 @@ export default function Page({ params }) {
                 </div>
               </div>
             </main>
-          </div>
-        </div>
+
       ): (
         <main id="mainContainer">
           {/*TODO: Finish this*/}

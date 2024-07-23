@@ -3,6 +3,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { poppinsBold, jetbrainsMono } from "@/lib/fonts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/fontawesome-free-solid'
+
+const { library } = require('@fortawesome/fontawesome-svg-core');
+library.add(faSearch);
 
 export default function Home() {
     const [search, setSearch] = useState('');
