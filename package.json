@@ -1,6 +1,6 @@
 {
-  "name": "bitwave-five",
-  "version": "0.1.0",
+  "name": "bitwave-bio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
