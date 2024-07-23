@@ -1,5 +1,6 @@
 const aliases = {
-    'root': 'Rxflex'
+    'root': 'Rxflex',
+    'dxrkyvo1d': 'dxrkyblood',
 }
 export function checkAlias (nickname) {
     return aliases[nickname] || nickname;
