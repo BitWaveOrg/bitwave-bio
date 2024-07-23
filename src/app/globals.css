@@ -134,9 +134,6 @@ main {
     opacity: 1;
   }
 }
-#myDiv {
-  /*display: none;*/
-}
 
 .ft-regular {
   font-family: "Poppins", sans-serif;
