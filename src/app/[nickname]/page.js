@@ -1,22 +1,14 @@
-import {getGitHubAvatarUrl, getGitHubConfig} from "@/lib/github";
+import { use } from "react";
 import Image from "next/image";
 import AnimatedLink from "@/components/AnimatedLink";
-import { Poppins } from "next/font/google"
-import { JetBrains_Mono } from "next/font/google";
-import { use } from "react";
+import { poppinsBold, jetbrainsMono } from "@/lib/fonts";
+import {getGitHubAvatarUrl, getGitHubConfig} from "@/lib/github";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faLink, faClipboard, faBolt} from '@fortawesome/fontawesome-free-solid'
-import {faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam} from '@fortawesome/free-brands-svg-icons'
+import { faLink, faClipboard, faBolt } from '@fortawesome/fontawesome-free-solid'
+import { faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam } from '@fortawesome/free-brands-svg-icons'
 
 const { library } = require('@fortawesome/fontawesome-svg-core');
 library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard, faBolt);
-
-const poppinsBold = Poppins({
-  weight: '700',
-  subsets: ['latin'],
-})
-
-const jetbrainsmono = JetBrains_Mono({subsets: ['latin']});
 
 export default function Page({ params }) {
   const user = use(getGitHubConfig(params.nickname));
@@ -31,7 +23,7 @@ export default function Page({ params }) {
                 <Image className={'rounded-full mb-12 shadow-lg'} src={avatar} alt={'avatar'} width={100} height={100}></Image>
                 <h1 className={poppinsBold.className}>{user.user_firstname}</h1>
                 <div id="textWriterWrapper">
-                  <p className={`${jetbrainsmono.className} dark:text-white text-black`} id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
+                  <p className={`${jetbrainsMono.className} dark:text-white text-black`} id="textWriter">{user.userbio}</p><span className="input-cursor"></span>
                 </div>
                 <div className="links-wrapper">
                   <AnimatedLink className="links-btn" href={`https://github.com/${params.nickname}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-github" /></AnimatedLink>
@@ -42,7 +34,7 @@ export default function Page({ params }) {
                   {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-instagram"></FontAwesomeIcon></AnimatedLink> }
                   {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
                   {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-clipboard" /></AnimatedLink>}
-                  <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-bolt" /></AnimatedLink>
+                  <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon height={25} icon="fa-solid fa-bolt" /></AnimatedLink>
                 </div>
               </div>
             </main>
