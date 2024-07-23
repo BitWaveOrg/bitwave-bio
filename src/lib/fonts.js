@@ -1,4 +1,4 @@
-import { Poppins, JetBrains_Mono } from "next/font/google";
+import { Poppins, JetBrains_Mono, Inter } from "next/font/google";
 
 export const poppinsRegular = Poppins({
   weight: "400",
@@ -13,3 +13,8 @@ export const poppinsBold = Poppins({
 export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
 });
+
+export const interSemiBold = Inter({
+  subsets: ['latin'],
+  weight: '600',
+})

@@ -1,11 +1,13 @@
 import { use } from "react";
 import Image from "next/image";
 import AnimatedLink from "@/components/AnimatedLink";
+import GoBack from "@/components/GoBack";
 import { poppinsBold, jetbrainsMono } from "@/lib/fonts";
 import {getGitHubAvatarUrl, getGitHubConfig} from "@/lib/github";
 import {checkAlias} from "@/lib/alias";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink, faClipboard, faBolt } from '@fortawesome/fontawesome-free-solid'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam } from '@fortawesome/free-brands-svg-icons'
 
 const { library } = require('@fortawesome/fontawesome-svg-core');
@@ -33,19 +35,19 @@ export default function Page({ params }) {
                   {user.discords_login && <AnimatedLink className="links-btn" href={`https://discords.com/bio/p/${user.discords_login}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-discord"></FontAwesomeIcon></AnimatedLink>}
                   {user.steam_login && <AnimatedLink className="links-btn" href={`https://steamcommunity.com/id/${user.steam_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-steam"></FontAwesomeIcon></AnimatedLink> }
                   {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-instagram"></FontAwesomeIcon></AnimatedLink> }
-                  {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
+                  {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={20} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
                   {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-clipboard" /></AnimatedLink>}
-                  <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={15} icon="fa-solid fa-bolt" /></AnimatedLink>
+                  <AnimatedLink className="links-btn" href={`/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={20} icon={faRightFromBracket} /></AnimatedLink>
                 </div>
               </div>
             </main>
 
       ): (
         <main id="mainContainer">
-          {/*TODO: Finish this*/}
           <div className="hero">
             <h1 className="ft-bold">User Not Found</h1>
             <p className="ft-code">404</p>
+            <GoBack className={`mt-10`} />
           </div>
         </main>
       )}
