@@ -193,8 +193,8 @@ Main CSS
 }
 
 html, body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -386,58 +386,3 @@ h3 {
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.2s;
 }
-
-/* Darkmode
-.darkmode {
-  --color-custom-bg: #4f52b4;
-  --clr-white: #fff;
-  --clr-black: #000;
-  --clr-accent: #007aff;
-  --clr-darkModeSwitchBg: #000;
-  --clr-darkModeSwitchI: #fff;
-  --clr-darkModeSwitchSh: rgba(255, 255, 255, 0.2);
-  --clr-hr: rgb(50, 50, 50);
-  --shadow: 0 0 6px var(--shadow-color);
-  --shadow-color: rgba(0, 0, 0, 0.35);
-  --clr-item-border: #fff;
-  --clr-item-background: #fff;
-  --background: var(--color-custom-bg);
-  --foreground: var(--clr-black);
-  transition: all ease-out 0.2s;
-}
-
-// Dark-mode switch
-
-#darkModeSwitch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  position: absolute;
-  right: 0%;
-  margin: 12px;
-  padding: 0;
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  border: none;
-  border-radius: 12px;
-  transition: ease-in 0.3s;
-  background-color: var(--background);
-}
-
-#darkModeSwitch i {
-  font-size: 24px;
-  transition: ease-in 0.3s;
-  color: var(--foreground);
-}
-
-#darkModeSwitch:hover {
-  background-color: var(--clr-darkModeSwitchBg);
-}
-
-#darkModeSwitch:hover i {
-  color: var(--clr-darkModeSwitchI);
-  transition: ease-out 0.3s;
-}*//*# sourceMappingURL=style.css.map */
-
