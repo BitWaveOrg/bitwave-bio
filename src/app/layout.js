@@ -1,5 +1,5 @@
-import "./globals.css";
-import "/public/assets/css/style.css";
+import Head from 'next/head';
+import "@/app/globals.css";
 
 export const metadata = {
   title: "BitWave Bio Landing",
@@ -8,8 +8,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+      <html lang="en">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        {/* Добавьте сюда другие метатеги */}
+      </Head>
       <body>{children}</body>
-    </html>
+      </html>
   );
 }
