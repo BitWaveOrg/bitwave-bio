@@ -13,7 +13,7 @@ export default function Loading()
 
   return (
     <div style={styles.container}>
-      <p>Loading...</p>
+      {/* TODO: Ejaculate this piece of software please */}
     </div>
   );
 }
