@@ -359,6 +359,7 @@ h3 {
 .links-btn {
   width: 48px;
   height: 48px;
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -372,17 +373,7 @@ h3 {
   transition: color 0.2s, background-color 0.5s;
 }
 
-.links-btn i {
-  font-size: 24px;
-  transition: 0.2s;
-}
-
 .links-btn:hover {
   background-color: hsla(0, 0%, 100%, 0.15);
   transition: background-color 0.5s;
-}
-
-.links-btn:hover i {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.2s;
 }
