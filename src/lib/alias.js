@@ -1,5 +1,6 @@
 const aliases = {
-    'root': 'Rxflex',
+    'root': 'BitWaveOrg',
+    'dev': 'Rxflex',
     'dxrkyvo1d': 'dxrkyblood',
     'nellex': 'NellexBEST',
     'devops': 'NellexBEST',
