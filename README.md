@@ -1,5 +1,7 @@
 # BitWave Bio
 
+![User page screenshot](./public/assets/img/screenshots/mockup_screenshot.png)
+
 BitWave Bio is a web application that generates a custom personal profile bio site
 based on a `config.yml` file stored in your user's root GitHub profile repository (where your profile's README.md is stored).<br>
 To start using it and share your personal site with your friends, you just need to customize your `config.yml` with needed links,
