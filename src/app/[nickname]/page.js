@@ -8,10 +8,10 @@ import { getGitHubAvatarUrl, getGitHubConfig } from "@/lib/github";
 import { checkAlias } from "@/lib/alias";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink, faClipboard, faBolt } from '@fortawesome/fontawesome-free-solid'
-import { faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faTwitch } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faTwitch, faFacebook, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 const { library } = require('@fortawesome/fontawesome-svg-core');
-library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard, faBolt, faTwitch);
+library.add(faGithub, faTelegram, faInstagram, faLinkedin, faDiscord, faSteam, faLink, faClipboard, faBolt, faTwitch, faFacebook, faTiktok, faYoutube);
 
 export default function Page({ params }) {
   const username = checkAlias(params.nickname);
@@ -35,6 +35,9 @@ export default function Page({ params }) {
               {user.steam_login && <AnimatedLink className="links-btn" href={`https://steamcommunity.com/id/${user.steam_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-steam"></FontAwesomeIcon></AnimatedLink> }
               {user.instagram_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.instagram_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-instagram"></FontAwesomeIcon></AnimatedLink> }
               {user.twitch_login && <AnimatedLink className="links-btn" href={`https://instagram.com/${user.twitch_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-twitch"></FontAwesomeIcon></AnimatedLink> }
+              {user.facebook_login && <AnimatedLink className="links-btn" href={`https://facebook.com/${user.facebook_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-facebook"></FontAwesomeIcon></AnimatedLink> }
+              {user.tiktok_login && <AnimatedLink className="links-btn" href={`https://tiktok.com/@${user.tiktok_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-tiktok"></FontAwesomeIcon></AnimatedLink> }
+              {user.youtube_login && <AnimatedLink className="links-btn" href={`https://youtube.com/${user.youtube_login}/`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-brands fa-youtube"></FontAwesomeIcon></AnimatedLink> }
               {user.website_url && <AnimatedLink className="links-btn" href={user.website_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={20} icon="fa-solid fa-link"></FontAwesomeIcon></AnimatedLink> }
               {user.cv_url && <AnimatedLink className="links-btn" href={user.cv_url} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon width={25} icon="fa-solid fa-clipboard" /></AnimatedLink>}
             </div>
