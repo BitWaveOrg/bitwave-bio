@@ -1,5 +1,7 @@
 # BitWave Bio
 
+[Russian](./README_RU.md)
+
 ![User page screenshot](./public/assets/img/screenshots/mockup_screenshot.png)
 
 BitWave Bio is a web application that generates a custom personal profile bio site
