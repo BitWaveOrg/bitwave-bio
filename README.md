@@ -52,7 +52,7 @@ To use BitWave Bio, follow these steps:
 
 1. Create a `config.yml` file in your root GitHub profile repository (use "Instalation" section above.).
 2. Define the links and configuration settings in the `config.yml` file.
-3. Search your generated personal profile site on [our site](https://five.bio).
+3. Search your generated personal profile site on [our site](https://bio.bitwavesoftware.tech).
 4. Now you can share your personal site with others, just by giving them your unique link!
 
 ## Contributing
